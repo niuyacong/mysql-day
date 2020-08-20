@@ -1,0 +1,9 @@
+begin 
+if new.tplid!=''
+then
+set new.tpldata=(select tpldata from tbm_widget_type where id=new.tplid);
+set new.tplcss=(select tplcss from tbm_widget_type where id=new.tplid);
+set new.tpltxt=(select tpltxt from tbm_widget_type where id=new.tplid);
+end if;
+
+end

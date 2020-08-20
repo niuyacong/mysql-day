@@ -1,0 +1,16 @@
+SELECT
+	sum(
+
+		IF (
+			(
+				`meeting_signup`.`meeting_id` = 837
+			),
+			1,
+			0
+		)
+	) AS `jiulei_count`
+	`meeting_signup`.`prov` AS `prov`
+FROM
+	`meeting_signup`
+GROUP BY
+	`meeting_signup`.`prov`

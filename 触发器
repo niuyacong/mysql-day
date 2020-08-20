@@ -7,3 +7,14 @@ set new.tpltxt=(select tpltxt from tbm_widget_type where id=new.tplid);
 end if;
 
 end
+
+
+
+CREATE TRIGGER tri_mallname BEFORE update 
+ON sline_mall FOR EACH ROW
+BEGIN
+    if new.name!=''
+		then
+		set new.`name`=old.`name`;
+		end if;
+END

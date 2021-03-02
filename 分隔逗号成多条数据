@@ -1,0 +1,6 @@
+SELECT 
+    'test',SUBSTRING_INDEX(SUBSTRING_INDEX('a,b,c',',',help_topic_id+1),',',-1) AS num 
+FROM 
+    mysql.help_topic 
+WHERE 
+    help_topic_id < LENGTH('a,b,c')-LENGTH(REPLACE('a,b,c',',',''))+1
